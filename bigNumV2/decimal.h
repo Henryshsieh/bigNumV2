@@ -1,5 +1,5 @@
 #pragma once
-#include "bignum.h"
+#include "integer.h"
 
 class decimal : public bignum
 {
@@ -7,6 +7,7 @@ public:
 	decimal(string);
 	decimal(double);
 	decimal(string, string, bool);
+	decimal(const integer&);
 	decimal(const decimal&);
 	decimal();
 	bool isNegtive()const;

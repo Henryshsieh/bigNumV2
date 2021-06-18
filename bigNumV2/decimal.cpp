@@ -126,15 +126,6 @@ decimal::decimal(double input_int)
 		floating = false;
 	}
 }
-decimal::decimal(const decimal& rhs) {
-	integer_part = rhs.integer_part;
-	float_part = rhs.float_part;
-	negtive = rhs.negtive;
-	floating = rhs.floating;
-
-}
-decimal::decimal() :integer_part("0"), float_part("0"), negtive(false), floating(false) {
-}
 decimal::decimal(string input) {
 	negtive = 0;
 	if (input == "") {
@@ -168,9 +159,24 @@ decimal::decimal(string input, string input_floating, bool neg) {
 	else
 		floating = false;
 }
+decimal::decimal(const integer& rhs) {
+	integer_part = rhs.integer_part;
+	float_part = "0";
+	negtive = rhs.negtive;
+	floating = rhs.floating;
+}
+decimal::decimal(const decimal& rhs) {
+	integer_part = rhs.integer_part;
+	float_part = rhs.float_part;
+	negtive = rhs.negtive;
+	floating = rhs.floating;
+}
+decimal::decimal() :integer_part("0"), float_part("0"), negtive(false), floating(false) {}
+
 bool decimal::isNegtive()const {
 	return negtive;
 }
+
 bool decimal::isFloating()const {
 	for (size_t i = 0; i < float_part.length(); i++)
 	{

@@ -250,12 +250,9 @@ bignum calculator::fuction() {
 	vec.push_back(opValue(oper(-1), 0));
 }
 
-void calculator::Removewhite()
-{
-	for (size_t i = 0; i < to_be_cal.length(); i++)
-	{
-		if (to_be_cal[i] == ' ')
-		{
+void calculator::Removewhite() {
+	for (size_t i = 0; i < to_be_cal.length(); i++) {
+		if (to_be_cal[i] == ' ') {
 			to_be_cal = to_be_cal.substr(0, i) + to_be_cal.substr(i + 1, to_be_cal.length());
 			i--;
 		}
